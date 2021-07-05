@@ -9,8 +9,7 @@ echo 今天的日期：%today%
 
 
 REM "進到 spring boot test 目錄"
-cd D:\Developers\SourceCodes\GitHub\Docker Project\MyDocker\spring-boot-test\
-
+cd D:\Developers\SourceCodes\GitHub\Docker Project\Docker_Study\spring-boot-test\
 
 echo.
 echo 01. 建置 Maven 專案

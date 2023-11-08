@@ -1,0 +1,11 @@
+FROM pcldreg.group.fb.com/tpebnkfirep/custom-alpine-openjdk8:3.18.3
+ENV HOME=/app
+WORKDIR $HOME
+ENV CONFIG_PATH $HOME/conf
+ENV ACTIVE_PROFILE=""
+ENV JAVA_HEAP_XMS=""
+ENV JAVA_HEAP_XMX=""
+EXPOSE 8080
+COPY target/app.jar $HOME/app.jar
+ENTRYPOINT java -jar -Xms$JAVA_HEAP_XMS -Xmx$JAVA_HEAP_XMX $HOME/app.jar --spring.config.location=$CONFIG_PATH/config/ --spring.profiles.active=$ACTIVE_PROFILE --logging.config=file:$CONFIG_PATH/logback-spring.xml
+USER 1000670000
